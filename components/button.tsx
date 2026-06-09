@@ -10,8 +10,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
-  primary: "bg-neutral-900 text-white",
-  secondary: "bg-neutral-100 text-black",
+  primary:
+    "bg-neutral-800 text-white dark:bg-neutral-100 dark:text-black shadow-[var(--shadow-brand)]  ",
+  secondary: "bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white  ",
 };
 
 export default function Button({
@@ -21,7 +22,11 @@ export default function Button({
   href,
   ...props
 }: ButtonProps) {
-  const classes = cn("py-1 px-4 rounded-sm", variantClasses[variant], className);
+  const classes = cn(
+    "py-1 px-4 rounded-sm font-sans text-base ",
+    variantClasses[variant],
+    className,
+  );
 
   if (href) {
     return (
