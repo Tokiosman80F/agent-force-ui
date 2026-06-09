@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Button from "./button";
 import Container from "./container";
@@ -24,6 +25,14 @@ export default function Hero() {
           <Button variant="secondary">
             <Link href="/role-base">View role based demos</Link>
           </Button>
+        </div>
+        <div className="relative min-h-140 w-full">
+          <Image
+            src="/landing.webp"
+            height={1080}
+            width={1920}
+            alt="demon 1 for agentforce"
+          />
         </div>
       </Container>
     </div>
